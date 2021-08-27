@@ -7,10 +7,10 @@
 </head>
 <body>
 
-<h1>DSI Youtube Delici :D</h1>
+<h1>DSI YouTube Delici</h1>
 
 <form>
-    <input type="text" value="https://www.youtube.com/watch?v=7eSoAUBL46A" size="80" id="txt_url">
+    <input type="text" value="https://www.youtube.com/watch?v=aqz-KE-bpKQ" size="80" id="txt_url">
     <input type="button" id="btn_fetch" value="Fetch">
 </form>
 
@@ -45,16 +45,14 @@
                 }
 
                 // first link with video
-                var first = links.find(function (link) {
-                    return link['format'].indexOf('video') !== -1;
-                });
+                var first = links[0];
 
                 if (typeof first === 'undefined') {
                     alert('No video found!');
                     return;
                 }
 
-                var stream_url = 'stream.php?url=' + encodeURIComponent(first['url']);
+                var stream_url = 'stream.php?url=' + encodeURIComponent(first);
 
                 var video = $("video");
                 video.attr('src', stream_url);
